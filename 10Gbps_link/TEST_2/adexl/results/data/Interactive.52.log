@@ -1,0 +1,26 @@
+Starting Single Run, Sweeps and Corners...
+
+Current time: Wed Aug 14 11:44:31 2024 
+Best design point: 1
+Design specs: 
+	Proj_1:TEST_2:1	corner	PVT_0 - 
+	Proj_1:TEST_2:1	corner	PVT_1 - 
+	Proj_1:TEST_2:1	corner	PVT_2 - 
+	Proj_1:TEST_2:1	corner	PVT_3 - 
+	Proj_1:TEST_2:1	corner	PVT_4 - 
+	Proj_1:TEST_2:1	corner	PVT_5 - 
+	Proj_1:TEST_2:1	corner	PVT_6 - 
+	Proj_1:TEST_2:1	corner	PVT_7 - 
+	Proj_1:TEST_2:1	corner	Nominal - 
+Design parameters: 
+	L		75u
+	M		1
+	VDD		1.2
+	WN		1.9u
+	WP		5.75u
+
+Interactive.52
+Number of points completed: 6
+Number of simulation errors: 48
+Interactive.52 completed. 
+Current time: Wed Aug 14 11:52:20 2024 

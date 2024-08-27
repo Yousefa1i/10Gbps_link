@@ -1,0 +1,15 @@
+Starting Single Run, Sweeps and Corners...
+
+Current time: Tue Jul 30 10:42:07 2024 
+Best design point: 1
+Design specs: 
+	Proj_1:channel_response:1	corner	Nominal - 
+	(VT("/RX_P") - VT("/RX_N"))		Error	No
+	(VT("/RX_N") - VT("/RX_P"))		Error	No
+Design parameters: 
+
+Interactive.0
+Number of points completed: 1
+Number of simulation errors: 2
+Interactive.0 completed. 
+Current time: Tue Jul 30 10:42:09 2024 

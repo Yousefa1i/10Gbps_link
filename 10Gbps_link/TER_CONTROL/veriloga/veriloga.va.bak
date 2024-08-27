@@ -1,0 +1,84 @@
+`include "constants.vams"
+`include "disciplines.vams"
+
+module ter(VDD, CLK, VOUTP, VOUTN, E0, E1, E2, E3, E4, E5);
+    input VDD, CLK, VOUTP, VOUTN;
+    output E0, E1, E2, E3, E4, E5;
+
+    voltage VDD, CLK, VOUTP, VOUTN, E0, E1, E2, E3, E4, E5;
+
+    integer k;
+    integer i;
+
+    real COMP[5:0];
+
+	integer clk_state = 0 ;
+
+    parameter real VTH = 0.55;
+
+    parameter real DELAY_TIME = 90p;
+
+	parameter real TCLK = 0.1n  ;
+
+    parameter real TR = TCLK/100 from [0:TCLK/2) ;   // Rise time
+
+    parameter real TF = TCLK/100 from [0:TCLK/2) ;   // Fall time
+
+    parameter real TD = TCLK/1000 from [0:TCLK/2) ;  // Delay time
+
+
+    analog begin
+        // Initialize the COMP array with the outputs
+       
+		@(initial_step) begin
+		COMP[0] = 0;
+        COMP[1] = 0;
+        COMP[2] = 0;
+        COMP[3] = 0;
+        COMP[4] = 0;
+        COMP[5] = 1.2;
+		clk_state = 1;
+        k=5;
+        i=5;
+
+		end
+		 @(timer(TCLK/2,TCLK/2)) begin
+		 clk_state = !clk_state;
+
+			 if (clk_state == 1 ) begin
+			     if ((V(VOUTP,VOUTN) <= 0) && (k>0)) begin
+
+                    COMP[k-1]=COMP[k];
+                    COMP[k]=0;
+                    k = k-1;
+                end 
+
+                
+                if ((V(VOUTP,VOUTN) > 1)&& (k<5)) begin
+
+                    COMP[k+1]=COMP[k];
+                    COMP[k]=0;
+                    k= k+1 ;
+ 
+                end
+                
+
+		 	end
+		 end
+
+
+        // Update the output voltages
+        //V(E0) <+ COMP[0];
+        //V(E1) <+ COMP[1];
+        //V(E2) <+ COMP[2];
+        //V(E3) <+ COMP[3];
+       // V(E4) <+ COMP[4];
+       // V(E5) <+ COMP[5];
+        V(E0) <+ transition (COMP[0], TD, TR, TF);
+        V(E1) <+ transition (COMP[1], TD, TR, TF);
+        V(E2) <+ transition (COMP[2], TD, TR, TF);
+        V(E3) <+ transition (COMP[3], TD, TR, TF);
+        V(E4) <+ transition (COMP[4], TD, TR, TF);
+        V(E5) <+ transition (COMP[5], TD, TR, TF);
+    end
+endmodule

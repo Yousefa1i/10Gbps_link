@@ -1,0 +1,185 @@
+// VerilogA for SERDES_Sameh, SRSAR_offset_voltage, veriloga
+
+ // Smart Resettable SAR Vos Tester
+ // H. O.
+ `include "constants.vams"
+ `include "disciplines.vams"
+ // code conventions :
+ // 1: positive / true / yes / rising /max
+ // 0: negative / false /no/ falling /min
+ // UPPER_CASE: parameters
+ // lower_case : internal variables
+ module vos_tester_srsar (VDDA,CLK,VINP,VINN,VOUTP,VOUTN,VOS_R,VOS_F);
+ input VOUTP,VOUTN;
+ output VDDA,CLK,VOS_R,VOS_F;
+ electrical VDDA,CLK,VINP,VINN,VOUTP,VOUTN,VOS_R,VOS_F;
+
+ // comparator supply voltage
+ parameter real VDD = 1.2 from (0:100];
+ // comparator CM input ( for diff input )
+ // or comparator DC VINN ( for SE input )
+ parameter real VCM = 0.6 from (0:VDD);
+ // comparator min diff input voltage
+ parameter real VIN_MIN = -100m from [-VDD:0];
+ // comparator max diff input voltage
+ parameter real VIN_MAX = 100m from [0:VDD];
+ // comparator high output voltage
+ parameter real VOUT_HIGH = 1.2 from [0:VDD];
+ // comparator low output voltage
+ parameter real VOUT_LOW = -1.2 from [-VDD:VDD];
+ // is comparator input differential?
+ parameter integer DIFF_IN = 1 from [0:1];
+ // is comparator output differential?
+ parameter integer DIFF_OUT = 1 from [0:1];
+ // clock period
+ parameter real TCLK = 0.1n from (0:1];
+ // rise time
+ parameter real TR = 0.1*0.1n from [0:TCLK/2);
+ // fall time
+ parameter real TF = 0.1*0.1n from [0:TCLK/2);
+ // clock active edge (1: rising ,0: falling )
+ // the active edge fires the comparison
+ // input is updated and output is checked
+ // just before the non active edge
+ parameter integer CLK_EDGE = 1 from [0:1];
+ // no. of SAR bitsx
+ parameter integer NBIT = 7 from [4:20];
+ // real variables by default init to zero
+ // current clock state (0 or 1)
+ integer clk_state ;
+ // small delay to avoid race condition
+ real td = TCLK / 1000;
+ // start in reset state
+ integer reset_state = 1;
+ // comparator input is modeled as diff
+ // input direction (1:rising, 0: falling)
+ integer vind_dir = 1;
+ // range of diff input
+ real vind_range;
+ // vind SAR value (ignores reset)
+ real vind_sar_val;
+ // vind value (SAR or reset value)
+ real vind_val;
+ // comparator positive input (active signal)
+ real vinp_val;
+ // comparator negative input (active signal // for diff input and DC for SE input)
+ real vinn_val;
+ // comparator output threshold
+ real voutd_th;
+ // comparator output is modeled as diff
+ real voutd_val;
+ // detect low-to-high output transition
+ integer l2h_event = 0;
+ // detect high-to-ow output transition
+ integer h2l_event = 0;
+ // counter used for SAR
+ integer count;
+ // measured Vos, rising
+ real vos_r_val;
+ // measured Vos, falling
+ real vos_f_val;
+
+ analog begin
+ V(VDDA) <+ VDD;
+ voutd_th = (DIFF_OUT == 1) ? 0 : (VOUT_HIGH + VOUT_LOW)/2;
+ // for SE output connect VOUTN to GND
+ voutd_val = V(VOUTP, VOUTN);
+ @(initial_step) begin
+ // init clock so 1st edge will be active
+ clk_state = (CLK_EDGE == 1) ? 0:1 ;
+ vind_range = VIN_MAX - VIN_MIN;
+ count = 1;
+ // init SAR value
+ vind_sar_val = VIN_MIN + vind_range/pow(2,count);
+ // init reset value
+ vind_val = VIN_MIN;
+ vinp_val = (DIFF_IN == 1) ? VCM + vind_val/2 : VCM + vind_val;
+ vinn_val = (DIFF_IN == 1) ? VCM - vind_val/2 : VCM;
+ end
+ // timer triggers before every clock edge
+ // due to transition delay (td)
+ // 1st active edge triggered after TCLK/2
+ // assume 50% duty cycle
+ @(timer(TCLK/2,TCLK/2)) begin
+ clk_state = !clk_state;
+ // update vind and check voutd_val just
+ // before CLK non-active edge 
+ if (clk_state != CLK_EDGE) begin
+ // skip output checking if in reset state
+ if (reset_state == 1) begin
+ // apply next sar value
+ vind_val = vind_sar_val;
+ // go to SAR state
+ reset_state = 0; 
+ end
+ // update vind and check voutd
+ else begin
+ // resetting count is the done flag 
+ if (count == 0)
+ // end tran sim (but not the MC)
+ $finish_current_analysis;
+ else if (count < NBIT) begin
+ count = count + 1;
+ // calculate next vind sar value
+ if (voutd_val > voutd_th) begin
+ // vind should jump down 
+ vind_sar_val = vind_sar_val - vind_range/pow(2,count);
+ // is vind in the rising test? 
+ if (vind_dir == +1)
+ // reset to VIN_MIN before
+ // jumping down to avoid hys
+ reset_state = 1;
+ end
+ else begin
+ // vind should jump up
+ vind_sar_val = vind_sar_val + vind_range/pow(2,count);
+ // is vind in the falling test?
+ if (vind_dir == 0)
+ // reset to VIN_MAX before
+ // jumping up to avoid hys
+ reset_state = 1;
+ end
+ end
+ // end of SAR for rising/falling test
+ else if (count == NBIT) begin 
+ // retain or remove SAR LSB
+ if (voutd_val > voutd_th)
+ vind_sar_val = vind_sar_val - vind_range/pow(2,count);
+ if (vind_dir == +1) begin
+ vos_r_val = vind_sar_val;
+ // switch from rising to falling 
+ vind_dir = 0;
+ // reset count
+ count = 1;
+ // init SAR value
+ vind_sar_val = VIN_MIN + vind_range/pow(2,count);
+ // init reset value
+ vind_val = VIN_MAX;
+ // go to reset state
+ reset_state = 1;
+ end
+ else if (vind_dir == 0) begin
+ vos_f_val = vind_sar_val; 
+ // resetting count is the done flag
+ count = 0;
+ end
+ end
+ if (reset_state == 1)
+ // reset state: assign reset value
+ vind_val = (vind_dir == 1) ? VIN_MIN: VIN_MAX;
+ else
+ // SAR state: assign vind SAR value
+ vind_val = vind_sar_val;
+ end
+ end
+ vinp_val = (DIFF_IN == 1) ? VCM + vind_val/2: VCM + vind_val;
+ vinn_val = (DIFF_IN == 1) ? VCM - vind_val/2: VCM;
+ end
+ V(CLK) <+ transition (clk_state*VDD, td, TR, TF);
+ V(VINP) <+ transition (vinp_val, td, TR, TF);
+ V(VINN) <+ transition (vinn_val, td, TR, TF);
+ V(VOS_R) <+ vos_r_val;
+ V(VOS_F) <+ vos_f_val;
+ end
+ endmodule
+

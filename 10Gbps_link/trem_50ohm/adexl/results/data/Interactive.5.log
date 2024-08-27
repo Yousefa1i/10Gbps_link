@@ -1,0 +1,16 @@
+Starting Single Run, Sweeps and Corners...
+
+Current time: Fri Aug 16 00:48:56 2024 
+Best design point: 1
+Design specs: 
+	serdes_project:trem_50ohm:1	corner	Nominal - 
+Design parameters: 
+	L		780n
+	R		5.6k
+	W		1u
+
+Interactive.5
+Number of points completed: 1
+Number of simulation errors: 0
+Interactive.5 completed. 
+Current time: Fri Aug 16 00:49:00 2024 

@@ -1,0 +1,42 @@
+// VerilogA for Proj_1, Dff, veriloga
+
+// Simple edge-triggered D flip-flop
+//
+// Version 1c, 17 July 03
+//
+// Ken Kundert
+//
+// Downloaded from The Designer's Guide (www.designers-guide.org).
+// Post any questions to www.designers-guide.org/Forum
+
+`include "disciplines.vams"
+
+//
+// D-flip flop without clear or reset
+//
+
+module dff1 (q, qb, clk, d);
+
+output q; voltage q;	// Q output
+output qb; voltage qb;	// Q bar output
+input clk; voltage clk;	// Clock input (edge triggered)
+input d; voltage d;	// D input
+parameter real td = 0 from [0:inf);	// delay from clock to q
+parameter real tt = 0 from [0:inf);	// transition time of output signals
+parameter real vh = 1.2;			// output voltage in high state
+parameter real vl = 0;			// output voltage in low state
+parameter real vth = (vh + vl)/2;	// threshold voltage at inputs
+parameter integer dir = +1 from [-1:+1] exclude 0;
+			// if dir=+1, rising clock edge triggers flip flop 
+			// if dir=-1, falling clock edge triggers flip flop 
+real state;
+
+analog begin
+    @(cross(V(clk) - vth, dir))
+	state = (V(d) > vth);
+
+    V(q) <+ transition( state ? vh : vl, td, tt );
+    V(qb) <+ transition( state ? vl : vh, td, tt );
+end
+endmodule
+

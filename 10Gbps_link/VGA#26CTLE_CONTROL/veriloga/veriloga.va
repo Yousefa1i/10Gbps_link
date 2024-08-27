@@ -1,0 +1,300 @@
+// VerilogA for Project1, DFE_Controller, veriloga
+
+`include "constants.vams"
+`include "disciplines.vams"      
+
+module VGA_CTLE_Controller (DFE_IN_P,DFE_IN_N,DLEV,VGA1,VGA2,VGA3,CTLE1,CTLE2,CTLE3) ;
+
+input DFE_IN_P,DFE_IN_N ;
+output DLEV,VGA1,VGA2,VGA3,CTLE1,CTLE2,CTLE3 ;
+
+electrical DFE_IN_P, DFE_IN_N, DLEV, VGA1, VGA2, VGA3, CTLE1, CTLE2, CTLE3 ;
+
+real VG1 = 0 ;
+real VG2 = 0 ;
+real VG3 = 0 ;
+real CT1 = 0 ;
+real CT2 = 0 ;
+real CT3 = 0 ;
+parameter real Mue = 1e-5  ; // Adaptation Loop Gain " Learning Rate/Step "
+
+parameter real VDD = 1.2 ;  // Supply Voltage
+
+parameter real TCLK = 0.1n from (0:1] ;  // Clock Period
+
+parameter real TR = TCLK/100 from [0:TCLK/2) ;   // Rise time
+
+parameter real TF = TCLK/100 from [0:TCLK/2) ;   // Fall time
+
+parameter real TD = TCLK/1000 from [0:TCLK/2) ;  // Delay time
+
+real Vgain = 3 ;
+
+
+real XC = 0 ; // X Corrected ,equalized signal "After DFE", " XC = (DFE_OUT_P) - (DFE_OUT_N) "
+
+integer N_count = 0 ; // Clock Cycle Counter
+
+integer flag = 0 ;   // flag detect increasing and decreasing of VGA gain 
+integer flag1 = 0 ;
+integer stop = 0 ;
+
+real Error = 0 ;  //  Error of the received signal with respect to the desired data level dlev " Error = XN - dlev = XC - dlev  "
+
+real dlev = 0 ;  // Desired Data Level " "
+
+integer dlev_Cycles = 1000 ; // Number of Cycles that let to dlev for settling
+
+analog begin
+
+
+    @(initial_step) begin
+
+
+            N_count = 1 ;
+            VG1 = 0 ;      // set output gain of VGA in the middle of the range
+            VG2 = VDD ;    // set output gain of VGA in the middle of the range
+            VG3 = 0 ;      // set output gain of VGA in the middle of the range
+            CT1 = 0 ;      // set output of CTLE at the max peaking
+            CT2 = 0 ;      // set output of CTLE at the max peaking
+            CT3 = 0 ;      // set output of CTLE at the max peaking
+            flag = 0 ;     // enable to decreasing the gain of VGA at first 
+            Vgain = 3 ;
+            stop = 0 ;
+
+        end
+    
+    @(timer(TCLK/2,TCLK)) begin // Falling Edge
+
+            N_count = N_count + 1 ;
+            
+            
+            XC = V(DFE_IN_P,DFE_IN_N) ; //ctle out 
+                 
+        end
+
+    @(timer(0,TCLK)) begin // Rising Edge
+
+//   dlev 
+        if (XC>0) begin
+            
+        
+            if (N_count < dlev_Cycles ) begin
+
+                Error = XC - dlev ;
+                if(Error >= 0) begin
+                    dlev = dlev + Mue * 5e3 ;
+                end
+
+                else begin
+                    dlev = dlev - Mue * 5e3 ;
+                end
+
+            end
+        end
+    end
+
+
+    @(timer(0,TCLK*dlev_Cycles/10)) begin // after detect dlev
+                if (flag1 ==1) begin
+                    if (flag >0) begin
+                        stop = 1 ;
+                    end
+                end
+                
+                
+                // if dlev smaller than 200 mV 
+               if ((dlev<0.2) && (Vgain < 8) && (stop==0)) begin
+
+                    if (Vgain == 1) begin
+                        VG1 = VDD ;     //gain =2dB
+                        VG2 = 0 ;      
+                        VG3 = 0 ;    
+                        
+                        flag =flag +1;
+                    end
+                    if (Vgain == 2) begin
+                        VG1 = 0 ;     
+                        VG2 = VDD ;      
+                        VG3 = 0 ;    
+                       
+                        flag =flag + 1;
+                    end
+                    if (Vgain == 3) begin
+                        VG1 = VDD ;     
+                        VG2 = VDD ;      
+                        VG3 = 0 ;    
+                        
+                        flag =flag + 1;
+                    end
+                    if (Vgain == 4) begin
+                        VG1 = 0 ;     
+                        VG2 = 0 ;      
+                        VG3 = VDD ;    
+                        
+                        flag =flag + 1;
+                    end
+
+                    if (Vgain == 5) begin
+                        VG1 = VDD ;     
+                        VG2 = 0 ;      
+                        VG3 = VDD ;    
+
+                        flag =flag + 1;
+                    end
+                    if (Vgain == 6) begin
+                        VG1 = 0 ;     
+                        VG2 = VDD ;      
+                        VG3 = VDD ;    
+                        
+                        flag =flag + 1;
+                    end
+                    if (Vgain == 7) begin
+                        VG1 = VDD ;     
+                        VG2 = VDD ;      
+                        VG3 = VDD ;    
+                        flag =flag + 1;
+                    end
+                Vgain = Vgain + 1 ;   //Vgain =2
+                
+                end
+
+                // if dlev greater than 200 mV 
+                if ((0.2<dlev) && (Vgain > 1) && (stop==0)) begin
+
+                    if (Vgain == 8) begin
+                        VG1 = 0 ;       //gain =7dB
+                        VG2 = VDD ;     //gain =7dB     
+                        VG3 = VDD ;     //gain =7dB
+                        flag1 =flag1 + 1 ;
+                       
+                    end
+                    if (Vgain == 7) begin
+                        VG1 = VDD ;            //gain =6dB
+                        VG2 = 0 ;              //gain =6dB     
+                        VG3 = VDD ;            //gain =6dB
+                        flag1 =flag1 + 1 ;
+                        
+                    end
+
+                    if (Vgain == 6) begin
+
+                        VG1 = 0 ;             //gain =5dB
+                        VG2 = 0 ;             //gain =5dB     
+                        VG3 = VDD ;           //gain =5dB
+                        flag1 =flag1 + 1 ;
+                       
+                    end
+                    if (Vgain == 5) begin
+
+                        VG1 = VDD ;            //gain =4dB
+                        VG2 = VDD ;            //gain =4dB     
+                        VG3 = 0 ;              //gain =4dB
+                        flag1 =flag1 + 1 ;
+                       
+                    end
+
+                    if (Vgain == 4) begin
+                        VG1 = 0 ;       //gain =3dB
+                        VG2 = VDD ;     //gain =3dB     
+                        VG3 = 0 ;       //gain =3dB
+                        flag1 =flag1 + 1 ;
+                        
+                    end
+                    if (Vgain == 3) begin
+                        VG1 = VDD ;            //gain =2dB
+                        VG2 = 0 ;              //gain =2dB     
+                        VG3 = 0 ;              //gain =2dB
+                        flag1 =flag1 + 1 ;
+                       
+                    end
+
+                    if (Vgain == 2) begin
+
+                        VG1 = 0 ;            //gain =1dB
+                        VG2 = 0 ;              //gain =1dB     
+                        VG3 = 0 ;              //gain =1dB
+                        flag1 =flag1 + 1 ;
+                        
+                    end
+                    
+                Vgain = Vgain - 1 ;         //Vgain = 1
+
+                end
+
+            if ((Vgain >= 8) && (dlev<0.2)) begin
+                    if (Vgain == 8) begin
+  
+                        CT1 = 0 ;     // set output of CTLE at the max peaking
+                        CT2 = 0 ;     // set output of CTLE at the max peaking
+                        CT3 = 0 ;     // set output of CTLE at the max peaking
+                    end
+
+                if (Vgain == 9) begin
+  
+                        CT1 = VDD ;     // set output of CTLE at the max peaking
+                        CT2 = 0 ;     // set output of CTLE at the max peaking
+                        CT3 = 0 ;     // set output of CTLE at the max peaking
+                    end
+
+                if (Vgain == 10) begin
+  
+                        CT1 = 0 ;     // set output of CTLE at the max peaking
+                        CT2 = VDD ;     // set output of CTLE at the max peaking
+                        CT3 = 0 ;     // set output of CTLE at the max peaking
+                    end
+
+                if (Vgain == 11) begin
+  
+                        CT1 = VDD ;     // set output of CTLE at the max peaking
+                        CT2 = VDD ;     // set output of CTLE at the max peaking
+                        CT3 = 0 ;     // set output of CTLE at the max peaking
+                    end
+
+                if (Vgain == 12) begin
+  
+                        CT1 = 0 ;     // set output of CTLE at the max peaking
+                        CT2 = 0 ;     // set output of CTLE at the max peaking
+                        CT3 = VDD ;     // set output of CTLE at the max peaking
+                    end
+
+                if (Vgain == 13) begin
+  
+                        CT1 = VDD ;     // set output of CTLE at the max peaking
+                        CT2 = 0 ;     // set output of CTLE at the max peaking
+                        CT3 = VDD ;     // set output of CTLE at the max peaking
+                    end
+
+                if (Vgain == 14) begin
+  
+                        CT1 = 0 ;     // set output of CTLE at the max peaking
+                        CT2 = VDD ;     // set output of CTLE at the max peaking
+                        CT3 = VDD ;     // set output of CTLE at the max peaking
+                    end
+
+                if (Vgain == 15) begin
+  
+                        CT1 = VDD ;     // set output of CTLE at the max peaking
+                        CT2 = VDD ;     // set output of CTLE at the max peaking
+                        CT3 = VDD ;     // set output of CTLE at the max peaking
+                    end
+
+                if (Vgain == 16) begin
+  
+                        CT1 = VDD ;     // set output of CTLE at the max peaking
+                        CT2 = VDD ;     // set output of CTLE at the max peaking
+                        CT3 = VDD ;     // set output of CTLE at the max peaking
+                    end  
+                    
+             end
+end
+
+            V(DLEV) <+ transition (dlev, TD, TR, TF);
+            V(VGA1)  <+ transition (VG1, TD, TR, TF);
+            V(VGA2)  <+ transition (VG2, TD, TR, TF);
+            V(VGA3)  <+ transition (VG3, TD, TR, TF);
+            V(CTLE1)  <+ transition (CT1, TD, TR, TF);
+            V(CTLE2)  <+ transition (CT2, TD, TR, TF);
+            V(CTLE3)  <+ transition (CT3, TD, TR, TF);
+end
+endmodule

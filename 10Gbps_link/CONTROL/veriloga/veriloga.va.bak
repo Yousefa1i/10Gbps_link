@@ -1,0 +1,106 @@
+// VerilogA for pro_2, CONTROL, veriloga
+
+`include "constants.vams"
+`include "disciplines.vams"
+
+module RX_CONROALLER(VDD,CLK,VOUTP,VOUTN,E0,E1,E2,E3,E4,E5);
+//control input signals
+	//termination control input signals 
+	input VDD;
+	input CLK;
+	input VOUTP;
+	input VOUTN;
+
+	//CTLE control input signals
+
+	//DFE control input signals
+
+//control output signals
+	//termination control output signals 
+	output E0,E1,E2,E3,E4,E5;
+/*
+	//CTLE control output signals
+	output X1,X2,X3;
+	//DFE control output signals
+,VGA1,VGA2,VGA3,X1,X2,X3
+*/	
+
+electrical VDD;
+electrical CLk;
+electrical VOUTP;
+electrical VOUTN;
+electrical E0;
+electrical E1;
+electrical E2;
+electrical E3;
+electrical E4;
+electrical E5;
+/*
+electrical VGA1;
+electrical VGA2;
+electrical VGA3;
+electrical X1;
+electrical X2;
+electrical X3;
+*/
+
+//PRAMETER
+
+//Internal Variable 
+real is_shifted;
+real E [5:0];
+
+//LOGIC
+
+analog begin
+	is_shifted = 0;
+	E[5:0] = 000000 ;   
+	while(V(VOUTP)!=0) begin
+		if(is_shifted) begin
+			is_shifted = 0;
+			E = {1'b1, E[5:1]};
+		end
+		else begin
+			E = {1'b0, E[5:1}
+			is_shefted = 1;
+		end	
+		@(posedge CLK);
+	end
+	{E5, E4, E3, E2, E1, E0} = E;
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+endmodule

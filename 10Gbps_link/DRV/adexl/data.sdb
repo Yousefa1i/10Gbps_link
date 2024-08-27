@@ -1,0 +1,1897 @@
+<?xml version="1.0"?>
+<setupdb version="5">data
+	<active>Active Setup
+		<corners>
+			<corner enabled="1">_default</corner>
+			<corner enabled="0">C5
+				<vars>
+					<var>R
+						<value>2000:100:3000</value>
+					</var>
+				</vars>
+				<models>
+					<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+						<modeltest>All</modeltest>
+						<modelblock>Global</modelblock>
+						<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+						<modelsection>"ff"</modelsection>
+					</model>
+				</models>
+			</corner>
+			<corner enabled="0">C6
+				<vars>
+					<var>R
+						<value>2000:100:3000</value>
+					</var>
+				</vars>
+				<models>
+					<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+						<modeltest>All</modeltest>
+						<modelblock>Global</modelblock>
+						<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+						<modelsection>"fs"</modelsection>
+					</model>
+				</models>
+			</corner>
+			<corner enabled="0">C7
+				<vars>
+					<var>R
+						<value>2000:100:3000</value>
+					</var>
+				</vars>
+				<models>
+					<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+						<modeltest>All</modeltest>
+						<modelblock>Global</modelblock>
+						<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+						<modelsection>"sf"</modelsection>
+					</model>
+				</models>
+			</corner>
+			<corner enabled="0">C8
+				<vars>
+					<var>R
+						<value>2000:100:3000</value>
+					</var>
+				</vars>
+				<models>
+					<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+						<modeltest>All</modeltest>
+						<modelblock>Global</modelblock>
+						<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+						<modelsection>"ss"</modelsection>
+					</model>
+				</models>
+			</corner>
+			<corner enabled="0">C9
+				<vars>
+					<var>R
+						<value>2000:100:3000</value>
+					</var>
+				</vars>
+				<models>
+					<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+						<modeltest>All</modeltest>
+						<modelblock>Global</modelblock>
+						<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+						<modelsection>"tt"</modelsection>
+					</model>
+				</models>
+			</corner>
+		</corners>
+		<extensions>
+			<extension>Parasitics
+				<callback>_parSetupDBExtensionCB</callback>
+				<iconvalue></iconvalue>
+				<icontype></icontype>
+			</extension>
+		</extensions>
+		<currentmode>Single Run, Sweeps and Corners</currentmode>
+		<overwritehistory>0</overwritehistory>
+		<tests>
+			<test enabled="1">Proj_1:DRV:1
+				<tool>ADE</tool>
+				<tooloptions>
+					<option>cell
+						<value>DRV</value>
+					</option>
+					<option>lib
+						<value>Proj_1</value>
+					</option>
+					<option>sim
+						<value>spectre</value>
+					</option>
+					<option>view
+						<value>schematic</value>
+					</option>
+					<option>path
+						<value>$AXL_SETUPDB_DIR/test_states</value>
+					</option>
+					<option>state
+						<value>Proj_1:DRV:1_active</value>
+					</option>
+				</tooloptions>
+				<origoptions>
+					<option>cell
+						<value>DRV</value>
+					</option>
+					<option>lib
+						<value>Proj_1</value>
+					</option>
+					<option>sim
+						<value>spectre</value>
+					</option>
+					<option>view
+						<value>schematic</value>
+					</option>
+				</origoptions>
+			</test>
+		</tests>
+		<vars>
+			<var>Mdown
+				<value>144.66</value>
+				<dependentTests>
+					<dependentTest omitted="0">Proj_1:DRV:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>MUP
+				<value>200</value>
+				<dependentTests>
+					<dependentTest omitted="0">Proj_1:DRV:1</dependentTest>
+				</dependentTests>
+			</var>
+		</vars>
+		<overwritehistoryname>Interactive.0</overwritehistoryname>
+		<plottingoptions>
+			<plottingoption>plottype
+				<value>None</value>
+			</plottingoption>
+			<plottingoption>usewaveformtemplate
+				<value>no</value>
+			</plottingoption>
+			<plottingoption>waveformtemplate
+				<value></value>
+			</plottingoption>
+		</plottingoptions>
+	</active>
+	<history>History
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.31
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+					<corner enabled="0">C5
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"ff"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="0">C6
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"fs"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="0">C7
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"sf"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="0">C8
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"ss"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="0">C9
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"tt"</modelsection>
+							</model>
+						</models>
+					</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test enabled="1">Proj_1:DRV:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>DRV</value>
+							</option>
+							<option>lib
+								<value>Proj_1</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>Proj_1:DRV:1_none_Interactive.31</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>DRV</value>
+							</option>
+							<option>lib
+								<value>Proj_1</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+						</origoptions>
+					</test>
+				</tests>
+				<vars>
+					<var>Mdown
+						<value>145</value>
+						<dependentTests>
+							<dependentTest omitted="0">Proj_1:DRV:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>MUP
+						<value>50:50:200</value>
+						<dependentTests>
+							<dependentTest omitted="0">Proj_1:DRV:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Wed Jul 24 00:36:00 2024
+</timestamp>
+			<resultsname>/home/cadence/Desktop/Seriallinks/Proj_1/DRV/adexl/results/data/Interactive.31.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.31.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/berkeley_cadence_003600573</localpsfdir>
+			<psfdir>/home/cadence/simulation/Proj_1/DRV/adexl/results/data/Interactive.31</psfdir>
+			<simdir>$AXL_PROJECT_DIR/Proj_1/DRV/adexl/results/data/Interactive.31</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/home/cadence/Desktop/Seriallinks/Proj_1/DRV/adexl/results/data/Interactive.31.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.31.log</runlogfile>
+			<schematicpoint>
+				<vars>
+					<var>MUP
+						<value></value>
+					</var>
+				</vars>
+			</schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.32
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+					<corner enabled="0">C5
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"ff"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="0">C6
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"fs"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="0">C7
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"sf"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="0">C8
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"ss"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="0">C9
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"tt"</modelsection>
+							</model>
+						</models>
+					</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test enabled="1">Proj_1:DRV:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>DRV</value>
+							</option>
+							<option>lib
+								<value>Proj_1</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>Proj_1:DRV:1_none_Interactive.32</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>DRV</value>
+							</option>
+							<option>lib
+								<value>Proj_1</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+						</origoptions>
+					</test>
+				</tests>
+				<vars>
+					<var>Mdown
+						<value>145</value>
+						<dependentTests>
+							<dependentTest omitted="0">Proj_1:DRV:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>MUP
+						<value>200</value>
+						<dependentTests>
+							<dependentTest omitted="0">Proj_1:DRV:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Wed Jul 24 00:39:47 2024
+</timestamp>
+			<resultsname>/home/cadence/Desktop/Seriallinks/Proj_1/DRV/adexl/results/data/Interactive.32.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.32.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/berkeley_cadence_003947311</localpsfdir>
+			<psfdir>/home/cadence/simulation/Proj_1/DRV/adexl/results/data/Interactive.32</psfdir>
+			<simdir>$AXL_PROJECT_DIR/Proj_1/DRV/adexl/results/data/Interactive.32</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/home/cadence/Desktop/Seriallinks/Proj_1/DRV/adexl/results/data/Interactive.32.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.32.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.33
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+					<corner enabled="0">C5
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"ff"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="0">C6
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"fs"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="0">C7
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"sf"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="0">C8
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"ss"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="0">C9
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"tt"</modelsection>
+							</model>
+						</models>
+					</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test enabled="1">Proj_1:DRV:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>DRV</value>
+							</option>
+							<option>lib
+								<value>Proj_1</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>Proj_1:DRV:1_none_Interactive.33</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>DRV</value>
+							</option>
+							<option>lib
+								<value>Proj_1</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+						</origoptions>
+					</test>
+				</tests>
+				<vars>
+					<var>Mdown
+						<value>145</value>
+						<dependentTests>
+							<dependentTest omitted="0">Proj_1:DRV:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>MUP
+						<value>200</value>
+						<dependentTests>
+							<dependentTest omitted="0">Proj_1:DRV:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Wed Jul 24 00:41:22 2024
+</timestamp>
+			<resultsname>/home/cadence/Desktop/Seriallinks/Proj_1/DRV/adexl/results/data/Interactive.33.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.33.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/berkeley_cadence_004122177</localpsfdir>
+			<psfdir>/home/cadence/simulation/Proj_1/DRV/adexl/results/data/Interactive.33</psfdir>
+			<simdir>$AXL_PROJECT_DIR/Proj_1/DRV/adexl/results/data/Interactive.33</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/home/cadence/Desktop/Seriallinks/Proj_1/DRV/adexl/results/data/Interactive.33.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.33.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.34
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+					<corner enabled="0">C5
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"ff"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="0">C6
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"fs"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="0">C7
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"sf"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="0">C8
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"ss"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="0">C9
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"tt"</modelsection>
+							</model>
+						</models>
+					</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test enabled="1">Proj_1:DRV:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>DRV</value>
+							</option>
+							<option>lib
+								<value>Proj_1</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>Proj_1:DRV:1_none_Interactive.34</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>DRV</value>
+							</option>
+							<option>lib
+								<value>Proj_1</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+						</origoptions>
+					</test>
+				</tests>
+				<vars>
+					<var>Mdown
+						<value>145</value>
+						<dependentTests>
+							<dependentTest omitted="0">Proj_1:DRV:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>MUP
+						<value>200</value>
+						<dependentTests>
+							<dependentTest omitted="0">Proj_1:DRV:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Wed Jul 24 00:42:58 2024
+</timestamp>
+			<resultsname>/home/cadence/Desktop/Seriallinks/Proj_1/DRV/adexl/results/data/Interactive.34.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.34.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/berkeley_cadence_004258159</localpsfdir>
+			<psfdir>/home/cadence/simulation/Proj_1/DRV/adexl/results/data/Interactive.34</psfdir>
+			<simdir>$AXL_PROJECT_DIR/Proj_1/DRV/adexl/results/data/Interactive.34</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/home/cadence/Desktop/Seriallinks/Proj_1/DRV/adexl/results/data/Interactive.34.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.34.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.35
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+					<corner enabled="0">C5
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"ff"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="0">C6
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"fs"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="0">C7
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"sf"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="0">C8
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"ss"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="0">C9
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"tt"</modelsection>
+							</model>
+						</models>
+					</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test enabled="1">Proj_1:DRV:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>DRV</value>
+							</option>
+							<option>lib
+								<value>Proj_1</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>Proj_1:DRV:1_none_Interactive.35</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>DRV</value>
+							</option>
+							<option>lib
+								<value>Proj_1</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+						</origoptions>
+					</test>
+				</tests>
+				<vars>
+					<var>Mdown
+						<value>140:1:150</value>
+						<dependentTests>
+							<dependentTest omitted="0">Proj_1:DRV:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>MUP
+						<value>200</value>
+						<dependentTests>
+							<dependentTest omitted="0">Proj_1:DRV:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Wed Jul 24 00:50:50 2024
+</timestamp>
+			<resultsname>/home/cadence/Desktop/Seriallinks/Proj_1/DRV/adexl/results/data/Interactive.35.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.35.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/berkeley_cadence_005050962</localpsfdir>
+			<psfdir>/home/cadence/simulation/Proj_1/DRV/adexl/results/data/Interactive.35</psfdir>
+			<simdir>$AXL_PROJECT_DIR/Proj_1/DRV/adexl/results/data/Interactive.35</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/home/cadence/Desktop/Seriallinks/Proj_1/DRV/adexl/results/data/Interactive.35.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.35.log</runlogfile>
+			<schematicpoint>
+				<vars>
+					<var>Mdown
+						<value></value>
+					</var>
+				</vars>
+			</schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.36
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+					<corner enabled="0">C5
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"ff"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="0">C6
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"fs"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="0">C7
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"sf"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="0">C8
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"ss"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="0">C9
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"tt"</modelsection>
+							</model>
+						</models>
+					</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test enabled="1">Proj_1:DRV:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>DRV</value>
+							</option>
+							<option>lib
+								<value>Proj_1</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>Proj_1:DRV:1_none_Interactive.36</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>DRV</value>
+							</option>
+							<option>lib
+								<value>Proj_1</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+						</origoptions>
+					</test>
+				</tests>
+				<vars>
+					<var>Mdown
+						<value>140:1:150</value>
+						<dependentTests>
+							<dependentTest omitted="0">Proj_1:DRV:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>MUP
+						<value>200</value>
+						<dependentTests>
+							<dependentTest omitted="0">Proj_1:DRV:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Wed Jul 24 00:54:15 2024
+</timestamp>
+			<resultsname>/home/cadence/Desktop/Seriallinks/Proj_1/DRV/adexl/results/data/Interactive.36.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.36.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/berkeley_cadence_005416124</localpsfdir>
+			<psfdir>/home/cadence/simulation/Proj_1/DRV/adexl/results/data/Interactive.36</psfdir>
+			<simdir>$AXL_PROJECT_DIR/Proj_1/DRV/adexl/results/data/Interactive.36</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/home/cadence/Desktop/Seriallinks/Proj_1/DRV/adexl/results/data/Interactive.36.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.36.log</runlogfile>
+			<schematicpoint>
+				<vars>
+					<var>Mdown
+						<value></value>
+					</var>
+				</vars>
+			</schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.37
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+					<corner enabled="0">C5
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"ff"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="0">C6
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"fs"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="0">C7
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"sf"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="0">C8
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"ss"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="0">C9
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"tt"</modelsection>
+							</model>
+						</models>
+					</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test enabled="1">Proj_1:DRV:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>DRV</value>
+							</option>
+							<option>lib
+								<value>Proj_1</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>Proj_1:DRV:1_none_Interactive.37</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>DRV</value>
+							</option>
+							<option>lib
+								<value>Proj_1</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+						</origoptions>
+					</test>
+				</tests>
+				<vars>
+					<var>Mdown
+						<value>144.66</value>
+						<dependentTests>
+							<dependentTest omitted="0">Proj_1:DRV:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>MUP
+						<value>200</value>
+						<dependentTests>
+							<dependentTest omitted="0">Proj_1:DRV:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Wed Jul 24 00:58:19 2024
+</timestamp>
+			<resultsname>/home/cadence/Desktop/Seriallinks/Proj_1/DRV/adexl/results/data/Interactive.37.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.37.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/berkeley_cadence_005820088</localpsfdir>
+			<psfdir>/home/cadence/simulation/Proj_1/DRV/adexl/results/data/Interactive.37</psfdir>
+			<simdir>$AXL_PROJECT_DIR/Proj_1/DRV/adexl/results/data/Interactive.37</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/home/cadence/Desktop/Seriallinks/Proj_1/DRV/adexl/results/data/Interactive.37.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.37.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.38
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+					<corner enabled="0">C5
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"ff"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="0">C6
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"fs"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="0">C7
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"sf"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="0">C8
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"ss"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="0">C9
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"tt"</modelsection>
+							</model>
+						</models>
+					</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test enabled="1">Proj_1:DRV:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>DRV</value>
+							</option>
+							<option>lib
+								<value>Proj_1</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>Proj_1:DRV:1_none_Interactive.38</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>DRV</value>
+							</option>
+							<option>lib
+								<value>Proj_1</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+						</origoptions>
+					</test>
+				</tests>
+				<vars>
+					<var>Mdown
+						<value>144.66</value>
+						<dependentTests>
+							<dependentTest omitted="0">Proj_1:DRV:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>MUP
+						<value>200</value>
+						<dependentTests>
+							<dependentTest omitted="0">Proj_1:DRV:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Wed Jul 24 00:59:09 2024
+</timestamp>
+			<resultsname>/home/cadence/Desktop/Seriallinks/Proj_1/DRV/adexl/results/data/Interactive.38.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.38.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/berkeley_cadence_005910076</localpsfdir>
+			<psfdir>/home/cadence/simulation/Proj_1/DRV/adexl/results/data/Interactive.38</psfdir>
+			<simdir>$AXL_PROJECT_DIR/Proj_1/DRV/adexl/results/data/Interactive.38</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/home/cadence/Desktop/Seriallinks/Proj_1/DRV/adexl/results/data/Interactive.38.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.38.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.39
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+					<corner enabled="0">C5
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"ff"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="0">C6
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"fs"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="0">C7
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"sf"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="0">C8
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"ss"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="0">C9
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"tt"</modelsection>
+							</model>
+						</models>
+					</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test enabled="1">Proj_1:DRV:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>DRV</value>
+							</option>
+							<option>lib
+								<value>Proj_1</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>Proj_1:DRV:1_none_Interactive.39</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>DRV</value>
+							</option>
+							<option>lib
+								<value>Proj_1</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+						</origoptions>
+					</test>
+				</tests>
+				<vars>
+					<var>Mdown
+						<value>144.66</value>
+						<dependentTests>
+							<dependentTest omitted="0">Proj_1:DRV:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>MUP
+						<value>200</value>
+						<dependentTests>
+							<dependentTest omitted="0">Proj_1:DRV:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Wed Jul 24 00:59:29 2024
+</timestamp>
+			<resultsname>/home/cadence/Desktop/Seriallinks/Proj_1/DRV/adexl/results/data/Interactive.39.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.39.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/berkeley_cadence_005929568</localpsfdir>
+			<psfdir>/home/cadence/simulation/Proj_1/DRV/adexl/results/data/Interactive.39</psfdir>
+			<simdir>$AXL_PROJECT_DIR/Proj_1/DRV/adexl/results/data/Interactive.39</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/home/cadence/Desktop/Seriallinks/Proj_1/DRV/adexl/results/data/Interactive.39.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.39.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.40
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+					<corner enabled="0">C5
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"ff"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="0">C6
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"fs"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="0">C7
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"sf"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="0">C8
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"ss"</modelsection>
+							</model>
+						</models>
+					</corner>
+					<corner enabled="0">C9
+						<vars>
+							<var>R
+								<value>2000:100:3000</value>
+							</var>
+						</vars>
+						<models>
+							<model enabled="0">l130e_12_rf_v102_mc_corner.lib.scs
+								<modeltest>All</modeltest>
+								<modelblock>Global</modelblock>
+								<modelfile>/home/cadence/my_project/Models/Spectre/Monte_Carlo/l130e_12_rf_v102_mc_corner.lib.scs</modelfile>
+								<modelsection>"tt"</modelsection>
+							</model>
+						</models>
+					</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test enabled="1">Proj_1:DRV:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>DRV</value>
+							</option>
+							<option>lib
+								<value>Proj_1</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>Proj_1:DRV:1_none_Interactive.40</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>DRV</value>
+							</option>
+							<option>lib
+								<value>Proj_1</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+						</origoptions>
+					</test>
+				</tests>
+				<vars>
+					<var>Mdown
+						<value>144.66</value>
+						<dependentTests>
+							<dependentTest omitted="0">Proj_1:DRV:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>MUP
+						<value>200</value>
+						<dependentTests>
+							<dependentTest omitted="0">Proj_1:DRV:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Wed Jul 24 01:01:14 2024
+</timestamp>
+			<resultsname>/home/cadence/Desktop/Seriallinks/Proj_1/DRV/adexl/results/data/Interactive.40.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.40.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/berkeley_cadence_010115050</localpsfdir>
+			<psfdir>/home/cadence/simulation/Proj_1/DRV/adexl/results/data/Interactive.40</psfdir>
+			<simdir>$AXL_PROJECT_DIR/Proj_1/DRV/adexl/results/data/Interactive.40</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/home/cadence/Desktop/Seriallinks/Proj_1/DRV/adexl/results/data/Interactive.40.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.40.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+	</history>
+</setupdb>

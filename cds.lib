@@ -1,0 +1,6 @@
+# File Created by cadence,,, at Mon Aug 26 00:11:14 2024
+# assisted by CdsLibEditor
+SOFTINCLUDE /usr/local/cadence/IC617/share/cdssetup/cds.lib
+DEFINE MentorObserverLib $MGC_HOME/shared/pkgs/icv/tools/realtime/virtuoso/MentorObserverLib
+DEFINE tsmcN65 /home/cadence/Desktop/tsmc65nm/tsmcN65
+DEFINE 10Gbps_link ./10Gbps_link

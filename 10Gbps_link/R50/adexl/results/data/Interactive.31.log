@@ -1,0 +1,27 @@
+Starting Single Run, Sweeps and Corners...
+
+Current time: Mon Jul 29 14:39:16 2024 
+Best design point: 1
+Design specs: 
+	Project1:R50:1	corner	Nominal - 
+Design parameters: 
+	E0		1
+	E1		1
+	E2		1
+	E3		1
+	E4		1
+	E5		0
+	ISS		50u
+	M_2nd		6
+	M_CLK		60
+	M_IN		15
+	PER		100p
+	RD		1k
+	W		2.94u
+	Wp		2.5u
+
+Interactive.31
+Number of points completed: 1
+Number of simulation errors: 0
+Interactive.31 completed. 
+Current time: Mon Jul 29 14:39:19 2024 

@@ -1,0 +1,215 @@
+// VerilogA for Project1, DFE_Controller, veriloga
+
+`include "constants.vams"
+`include "disciplines.vams"
+
+module DFE_Controller ( CLK, DFE_IN_P, DFE_IN_N, DFE_OUT_P, DFE_OUT_N, COMP_Q, COMP_QB, First_Tap_Weight, Counter, DLEV, SgnP, CTRL0, CTRL1, CTRL2, CTRL3 ) ;
+
+input CLK,DFE_IN_P,DFE_IN_N,DFE_OUT_P,DFE_OUT_N,COMP_Q,COMP_QB ;
+
+output First_Tap_Weight,Counter,DLEV,SgnP,CTRL0,CTRL1,CTRL2,CTRL3 ;
+
+electrical CLK,DFE_IN_P,DFE_IN_N,DFE_OUT_P,DFE_OUT_N,COMP_Q,COMP_QB,First_Tap_Weight,Counter,DLEV,SgnP,CTRL0,CTRL1,CTRL2,CTRL3 ;
+
+parameter real Mue = 1e-5  ; // Adaptation Loop Gain " Learning Rate/Step "
+
+parameter real VDD = 1.2 ;  // Supply Voltage
+
+parameter real TCLK = 0.1n from (0:1] ;  // Clock Period
+
+parameter real TR = TCLK/100 from [0:TCLK/2) ;   // Rise time
+
+parameter real TF = TCLK/100 from [0:TCLK/2) ;   // Fall time
+
+parameter real TD = TCLK/1000 from [0:TCLK/2) ;  // Delay time
+
+real First_TW = 0 ; // First Tap Weight
+
+//  real Main_TW = 0 ;  // Main Tap Weight
+
+real Max_First_TW = 0.27 ; //  Max normalized value for First Tap Weight 
+
+integer Norm_First_TW = 0 ; // normalized value for First Tap Weight "integer"
+
+integer clk_state = 1 ; // "1" high/VDD , "0" low/Zero ,, " IMPORTANT note that clk_state start as high "
+
+real XC = 0 ; // X Corrected ,equalized signal "After DFE", " XC = (DFE_OUT_P) - (DFE_OUT_N) "
+
+real XC_T = 0 ; // X Corrected ,equalized signal "After DFE", " XC_T = XN + First_TW * Y "
+
+real XN = 0 ; // Unequalized Signal "Before DFE", " XN = (DFE_IN_P) - (DFE_IN_N) "
+
+real Y = 0 ; // The decision Y is made based on the equalized signal XC "After Comparator", " Y = (COMP_Q) - (COMP_QB)" 
+
+integer N_count = 0 ; // Clock Cycle Main_Tap_Weight
+
+real Error = 0 ;  //  Error of the received signal with respect to the desired data level dlev " Error = XC - dlev  "
+
+real dlev = 400m ;  // Desired Data Level " dlev = dlev +/- Mue * DC_DLEV "
+
+// real dlev_new = 0 ;  // Optimized dlev " dlev_new = dlev + Mue * sign(Error) " 
+
+integer DC_DLEV = 1 ; // DLEV Dynamic Coefficient for Mue " DC = 2000/pow(2,(N_count-dlev_Cycles)/50) "
+
+integer DC_TW = 1 ; // DLEV Dynamic Coefficient for Mue " DC = 2000/pow(2,(N_count-dlev_Cycles)/50) "
+
+integer dlev_Cycles = 800 ; // Number of Cycles that let to dlev for settling
+
+integer CH_delay_Cycles = 100 ;  //  Channel delay cycles
+
+real SP = VDD ;  // Indicate whether to add the tap weight "1" or subtract it "0" 
+
+real C0 = 0 ;  // CTRL0 value
+
+real C1 = 0 ;  // CTRL1 value
+
+real C2 = 0 ;  // CTRL2 value
+
+real C3 = 0 ;  // CTRL3 value
+
+integer dummy = 0 ; // dummy variable for Norm_First_TW
+
+
+
+	analog begin
+
+
+		@(initial_step) begin
+
+			clk_state = 1 ;
+			N_count = 1 ;
+	
+		end
+
+		@(timer(TCLK/2,TCLK/2)) begin
+
+			clk_state = !clk_state ; 
+		
+		
+		end
+
+		@(timer(TCLK/2,TCLK)) begin // Falling Edge
+
+			N_count = N_count + 1 ;
+			DC_TW = 1000/pow(2,(N_count - dlev_Cycles)/150) ;
+			DC_DLEV = 1000/pow(2,(N_count - CH_delay_Cycles)/150) ;
+			XN = V(DFE_IN_P,DFE_IN_N) ;
+			XC = V(DFE_OUT_P,DFE_OUT_N) ;
+			Y = V(COMP_Q,COMP_QB) ;
+			XC_T = XN + First_TW * Y ;
+	
+		end
+
+
+	
+	
+	@(timer(0,TCLK)) begin // Rising Edge
+
+        //  Adaptation
+		if (N_count > CH_delay_Cycles ) begin
+
+			if (XC >= 0 ) begin
+
+					//   dlev 
+				if (N_count < dlev_Cycles ) begin
+
+					Error = XC - dlev ;
+					if(Error >= 0) begin
+						dlev = dlev + Mue * DC_DLEV ;
+					end
+
+					else begin
+						dlev = dlev - Mue * DC_DLEV ;
+					end
+
+				end
+
+				else begin
+					Error = XC_T - dlev ;
+					if((Error * Y) >= 0) begin
+						
+						First_TW = First_TW - ( Mue * DC_TW ) ;
+					end
+
+					else begin
+
+						if ( abs(First_TW) > Max_First_TW ) begin 
+
+							Max_First_TW = abs(First_TW) * 1.25 ;
+						end
+		
+						First_TW = First_TW + ( Mue * DC_TW ) ;
+					end
+					
+
+					// Generate Control Signals
+
+
+						//  SgnP
+					if ( First_TW < 0 ) 
+
+							SP = 0 ;
+					else 
+							SP = VDD ;
+
+
+						//   CTRL
+					Norm_First_TW = (15/Max_First_TW) * First_TW ;
+					dummy = abs(Norm_First_TW) ;
+		
+					if ( dummy % 2 == 0 ) 
+						C0 = 0 ;
+				
+					else 
+						C0 = VDD ;
+
+					dummy = dummy / 2 ;
+			
+					if ( dummy % 2 == 0 ) 
+						C1 = 0 ;
+				
+					else 
+						C1 = VDD ;
+	
+					dummy = dummy / 2 ;
+		
+					if ( dummy % 2 == 0 ) 
+						C2 = 0 ;
+				
+					else 
+						C2 = VDD ;
+
+					dummy = dummy / 2 ;
+		
+					if ( dummy % 2 == 0 ) 
+						C3 = 0 ;
+				
+					else 
+						C3 = VDD ;
+
+					
+				end				
+			end
+		end
+	end
+	
+			V(CTRL0) <+ transition (C0, TD, TR, TF);
+			V(CTRL1) <+ transition (C1, TD, TR, TF);
+			V(CTRL2) <+ transition (C2, TD, TR, TF);
+			V(CTRL3) <+ transition (C3, TD, TR, TF);
+			V(DLEV) <+ transition (dlev, TD, TR, TF);
+			V(SgnP) <+ transition (SP, TD, TR, TF);
+			V(First_Tap_Weight) <+ transition (First_TW, TD, TR, TF);
+			V(Counter) <+ transition (N_count, TD, TR, TF);
+
+//			V(CTRL0) <+ C0 ;
+//			V(CTRL1) <+ C1 ;
+//			V(CTRL2) <+ C2 ;
+//			V(CTRL3) <+ C3 ;
+//			V(DLEV) <+ dlev ;		
+//			V(SgnP) <+ SP ;
+//			V(First_Tap_Weight) <+ First_TW ;
+//			V(Main_Tap_Weight) <+ Main_TW ;
+	
+	end
+endmodule

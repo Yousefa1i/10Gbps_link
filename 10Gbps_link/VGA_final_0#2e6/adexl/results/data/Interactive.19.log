@@ -1,0 +1,17 @@
+Starting Single Run, Sweeps and Corners...
+
+Current time: Sun Jul 28 22:47:17 2024 
+Best design point: 1
+Design specs: 
+	Project1:VGA_final_0.6:1	corner	Nominal - 
+	dB20(VF("/VODIFF"))		Error	No
+	bandwidth(VF("/VODIFF") 3 "low")		Error	No
+Design parameters: 
+	CL		40p
+	RE		20
+
+Interactive.19
+Number of points completed: 1
+Number of simulation errors: 2
+Interactive.19 completed. 
+Current time: Sun Jul 28 22:47:23 2024 

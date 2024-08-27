@@ -1,0 +1,523 @@
+<?xml version="1.0"?>
+<setupdb version="5">data
+	<active>Active Setup
+		<corners>
+			<corner enabled="1">_default</corner>
+		</corners>
+		<currentmode>Monte Carlo Sampling</currentmode>
+		<extensions>
+			<extension>Parasitics
+				<callback>_parSetupDBExtensionCB</callback>
+				<iconvalue></iconvalue>
+				<icontype></icontype>
+			</extension>
+		</extensions>
+		<overwritehistory>0</overwritehistory>
+		<tests>
+			<test>Project1:COMP_CML:1
+				<tool>ADE</tool>
+				<tooloptions>
+					<option>cell
+						<value>COMP_CML</value>
+					</option>
+					<option>lib
+						<value>Project1</value>
+					</option>
+					<option>sim
+						<value>spectre</value>
+					</option>
+					<option>view
+						<value>schematic</value>
+					</option>
+					<option>path
+						<value>$AXL_SETUPDB_DIR/test_states</value>
+					</option>
+					<option>state
+						<value>Project1:COMP_CML:1_active</value>
+					</option>
+				</tooloptions>
+				<origoptions>
+					<option>cell
+						<value>COMP_CML</value>
+					</option>
+					<option>lib
+						<value>Project1</value>
+					</option>
+					<option>sim
+						<value>spectre</value>
+					</option>
+					<option>view
+						<value>schematic</value>
+					</option>
+				</origoptions>
+				<outputs>
+					<output>value(VT("/VOS_R") ymax(xval(VT("/VOS_R"))))
+						<evalType>point</evalType>
+					</output>
+					<output>value(VT("/VOS_F") ymax(xval(VT("/VOS_F"))))
+						<evalType>point</evalType>
+					</output>
+					<output>delay(?wf1 VT("/CLK") ?value1 0.5 ?edge1 "rising" ?nth1 1 ?td1 0 ?wf2 abs((VT("/XICOMP/VOUTP") - VT("/XICOMP/VOUTN"))) ?value2 0.5 ?edge2 "either" ?nth2 1 ?td2 nil ?stop nil ?multiple nil)
+						<evalType>point</evalType>
+					</output>
+					<output>delay(?wf1 VT("/VINP") ?value1 0.6 ?edge1 "rising" ?nth1 1 ?td1 0 ?wf2 abs((VT("/XICOMP/VOUTP") - VT("/XICOMP/VOUTN"))) ?value2 0.5 ?edge2 "either" ?nth2 1 ?td2 nil ?stop nil ?multiple nil)
+						<evalType>point</evalType>
+					</output>
+					<output>nil
+						<evalType>point</evalType>
+					</output>
+					<output>delay(?wf1 VT("/VINP") ?value1 0.57 ?edge1 "rising" ?nth1 1 ?td1 0 ?wf2 abs((VT("/VOUTP2") (- VT("/VOUTN2")))) ?value2 0.82 ?edge2 "either" ?nth2 1 ?td2 nil ?stop nil ?multiple nil)
+						<evalType>point</evalType>
+					</output>
+					<output>delay(?wf1 VT("/VINP") ?value1 0.57 ?edge1 "rising" ?nth1 1 ?td1 0 ?wf2 abs((VT("/VOUTP2") - (VT("/VOUTN2")))) ?value2 0.82 ?edge2 "either" ?nth2 1 ?td2 nil ?stop nil ?multiple nil)
+						<evalType>point</evalType>
+					</output>
+					<output>delay(?wf1 VT("/VINP") ?value1 0.57 ?edge1 "rising" ?nth1 1 ?td1 0 ?wf2 abs((VT("/VOUTP2") - (VT("/VOUTN2")))) ?value2 0.6 ?edge2 "either" ?nth2 1 ?td2 nil ?stop nil ?multiple nil)
+						<evalType>point</evalType>
+					</output>
+				</outputs>
+			</test>
+		</tests>
+		<vars>
+			<var>PER
+				<value>0.1n</value>
+				<dependentTests>
+					<dependentTest omitted="0">Project1:COMP_CML:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>VSENS
+				<value>1m</value>
+				<dependentTests>
+					<dependentTest omitted="0">Project1:COMP_CML:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>VX
+				<value>350m</value>
+				<dependentTests>
+					<dependentTest omitted="0">Project1:COMP_CML:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>CM
+				<value>1000m</value>
+				<dependentTests>
+					<dependentTest omitted="0">Project1:COMP_CML:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>L_REG
+				<value>60n</value>
+				<dependentTests>
+					<dependentTest omitted="0">Project1:COMP_CML:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>RL
+				<value>6k</value>
+				<dependentTests>
+					<dependentTest omitted="0">Project1:COMP_CML:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>LIN
+				<value>70n</value>
+				<dependentTests>
+					<dependentTest omitted="0">Project1:COMP_CML:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>WIN
+				<value>1u</value>
+				<dependentTests>
+					<dependentTest omitted="0">Project1:COMP_CML:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>W_REG
+				<value>250n</value>
+				<dependentTests>
+					<dependentTest omitted="0">Project1:COMP_CML:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>M_CLK
+				<value>10</value>
+				<dependentTests>
+					<dependentTest omitted="0">Project1:COMP_CML:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>W_clk
+				<value>240n</value>
+				<dependentTests>
+					<dependentTest omitted="0">Project1:COMP_CML:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>ISS
+				<value>250u</value>
+				<dependentTests>
+					<dependentTest omitted="0">Project1:COMP_CML:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>L_clk
+				<value>60n</value>
+				<dependentTests>
+					<dependentTest omitted="0">Project1:COMP_CML:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>L_tail
+				<value>2u</value>
+				<dependentTests>
+					<dependentTest omitted="0">Project1:COMP_CML:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>W_tail
+				<value>250u</value>
+				<dependentTests>
+					<dependentTest omitted="0">Project1:COMP_CML:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>N
+				<value>1</value>
+			</var>
+			<var>W_LARGE
+				<value>1u</value>
+				<dependentTests>
+					<dependentTest omitted="0">Project1:COMP_CML:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>W_SMALL
+				<value>120n</value>
+				<dependentTests>
+					<dependentTest omitted="0">Project1:COMP_CML:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>iss
+				<value>100u</value>
+				<dependentTests>
+					<dependentTest omitted="0">Project1:COMP_CML:1</dependentTest>
+				</dependentTests>
+			</var>
+		</vars>
+		<overwritehistoryname>Interactive.0</overwritehistoryname>
+		<plottingoptions>
+			<plottingoption>plottype
+				<value>None</value>
+			</plottingoption>
+			<plottingoption>usewaveformtemplate
+				<value>no</value>
+			</plottingoption>
+			<plottingoption>waveformtemplate
+				<value></value>
+			</plottingoption>
+		</plottingoptions>
+		<runoptions>
+			<mode>Monte Carlo Sampling
+				<runoption>mcmethod
+					<value>mismatch</value>
+				</runoption>
+				<runoption>mcnumpoints
+					<value>200</value>
+				</runoption>
+				<runoption>mcnumbins
+					<value></value>
+				</runoption>
+				<runoption>mcStopEarly
+					<value>0</value>
+				</runoption>
+				<runoption>mcStopMethod
+					<value>Significance Test</value>
+				</runoption>
+				<runoption>samplingmode
+					<value>random</value>
+				</runoption>
+				<runoption>saveprocess
+					<value>1</value>
+				</runoption>
+				<runoption>savemismatch
+					<value>1</value>
+				</runoption>
+				<runoption>mcreferencepoint
+					<value>0</value>
+				</runoption>
+				<runoption>donominal
+					<value>1</value>
+				</runoption>
+				<runoption>saveallplots
+					<value>0</value>
+				</runoption>
+				<runoption>montecarloseed
+					<value></value>
+				</runoption>
+				<runoption>mcstartingrunnumber
+					<value></value>
+				</runoption>
+				<runoption>dumpParamMode
+					<value>yes</value>
+				</runoption>
+			</mode>
+		</runoptions>
+	</active>
+	<history>History
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">MonteCarlo.0
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<currentmode>Monte Carlo Sampling</currentmode>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>Project1:COMP_CML:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>COMP_CML</value>
+							</option>
+							<option>lib
+								<value>Project1</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>Project1:COMP_CML:1_none_MonteCarlo.0</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>COMP_CML</value>
+							</option>
+							<option>lib
+								<value>Project1</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>value(VT("/VOS_R") ymax(xval(VT("/VOS_R"))))
+								<evalType>point</evalType>
+							</output>
+							<output>value(VT("/VOS_F") ymax(xval(VT("/VOS_F"))))
+								<evalType>point</evalType>
+							</output>
+							<output>delay(?wf1 VT("/CLK") ?value1 0.5 ?edge1 "rising" ?nth1 1 ?td1 0 ?wf2 abs((VT("/XICOMP/VOUTP") - VT("/XICOMP/VOUTN"))) ?value2 0.5 ?edge2 "either" ?nth2 1 ?td2 nil ?stop nil ?multiple nil)
+								<evalType>point</evalType>
+							</output>
+							<output>delay(?wf1 VT("/VINP") ?value1 0.6 ?edge1 "rising" ?nth1 1 ?td1 0 ?wf2 abs((VT("/XICOMP/VOUTP") - VT("/XICOMP/VOUTN"))) ?value2 0.5 ?edge2 "either" ?nth2 1 ?td2 nil ?stop nil ?multiple nil)
+								<evalType>point</evalType>
+							</output>
+							<output>nil
+								<evalType>point</evalType>
+							</output>
+							<output>delay(?wf1 VT("/VINP") ?value1 0.57 ?edge1 "rising" ?nth1 1 ?td1 0 ?wf2 abs((VT("/VOUTP2") (- VT("/VOUTN2")))) ?value2 0.82 ?edge2 "either" ?nth2 1 ?td2 nil ?stop nil ?multiple nil)
+								<evalType>point</evalType>
+							</output>
+							<output>delay(?wf1 VT("/VINP") ?value1 0.57 ?edge1 "rising" ?nth1 1 ?td1 0 ?wf2 abs((VT("/VOUTP2") - (VT("/VOUTN2")))) ?value2 0.82 ?edge2 "either" ?nth2 1 ?td2 nil ?stop nil ?multiple nil)
+								<evalType>point</evalType>
+							</output>
+							<output>delay(?wf1 VT("/VINP") ?value1 0.57 ?edge1 "rising" ?nth1 1 ?td1 0 ?wf2 abs((VT("/VOUTP2") - (VT("/VOUTN2")))) ?value2 0.6 ?edge2 "either" ?nth2 1 ?td2 nil ?stop nil ?multiple nil)
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+				</tests>
+				<vars>
+					<var>PER
+						<value>0.1n</value>
+						<dependentTests>
+							<dependentTest omitted="0">Project1:COMP_CML:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>VSENS
+						<value>1m</value>
+						<dependentTests>
+							<dependentTest omitted="0">Project1:COMP_CML:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>VX
+						<value>350m</value>
+						<dependentTests>
+							<dependentTest omitted="0">Project1:COMP_CML:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>CM
+						<value>1000m</value>
+						<dependentTests>
+							<dependentTest omitted="0">Project1:COMP_CML:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>L_REG
+						<value>60n</value>
+						<dependentTests>
+							<dependentTest omitted="0">Project1:COMP_CML:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>RL
+						<value>6k</value>
+						<dependentTests>
+							<dependentTest omitted="0">Project1:COMP_CML:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>LIN
+						<value>70n</value>
+						<dependentTests>
+							<dependentTest omitted="0">Project1:COMP_CML:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>WIN
+						<value>1u</value>
+						<dependentTests>
+							<dependentTest omitted="0">Project1:COMP_CML:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>W_REG
+						<value>250n</value>
+						<dependentTests>
+							<dependentTest omitted="0">Project1:COMP_CML:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>M_CLK
+						<value>10</value>
+						<dependentTests>
+							<dependentTest omitted="0">Project1:COMP_CML:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>W_clk
+						<value>240n</value>
+						<dependentTests>
+							<dependentTest omitted="0">Project1:COMP_CML:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>ISS
+						<value>250u</value>
+						<dependentTests>
+							<dependentTest omitted="0">Project1:COMP_CML:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>L_clk
+						<value>60n</value>
+						<dependentTests>
+							<dependentTest omitted="0">Project1:COMP_CML:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>L_tail
+						<value>2u</value>
+						<dependentTests>
+							<dependentTest omitted="0">Project1:COMP_CML:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>W_tail
+						<value>250u</value>
+						<dependentTests>
+							<dependentTest omitted="0">Project1:COMP_CML:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>N
+						<value>1</value>
+					</var>
+					<var>W_LARGE
+						<value>1u</value>
+						<dependentTests>
+							<dependentTest omitted="0">Project1:COMP_CML:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>W_SMALL
+						<value>120n</value>
+						<dependentTests>
+							<dependentTest omitted="0">Project1:COMP_CML:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>iss
+						<value>100u</value>
+						<dependentTests>
+							<dependentTest omitted="0">Project1:COMP_CML:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<runoptions>
+					<mode>Monte Carlo Sampling
+						<runoption>mcmethod
+							<value>mismatch</value>
+						</runoption>
+						<runoption>mcnumpoints
+							<value>200</value>
+						</runoption>
+						<runoption>mcnumbins
+							<value></value>
+						</runoption>
+						<runoption>mcStopEarly
+							<value>0</value>
+						</runoption>
+						<runoption>mcStopMethod
+							<value>Significance Test</value>
+						</runoption>
+						<runoption>samplingmode
+							<value>random</value>
+						</runoption>
+						<runoption>saveprocess
+							<value>1</value>
+						</runoption>
+						<runoption>savemismatch
+							<value>1</value>
+						</runoption>
+						<runoption>mcreferencepoint
+							<value>0</value>
+						</runoption>
+						<runoption>donominal
+							<value>1</value>
+						</runoption>
+						<runoption>saveallplots
+							<value>0</value>
+						</runoption>
+						<runoption>montecarloseed
+							<value></value>
+						</runoption>
+						<runoption>mcstartingrunnumber
+							<value></value>
+						</runoption>
+						<runoption>dumpParamMode
+							<value>yes</value>
+						</runoption>
+					</mode>
+				</runoptions>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Sun Aug  4 17:32:14 2024
+</timestamp>
+			<resultsname>/home/cadence/Desktop/PDK/Project1/COMP_CML/adexl/results/data/MonteCarlo.0.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/MonteCarlo.0.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/berkeley_cadence_173214277</localpsfdir>
+			<psfdir>/home/cadence/simulation/Project1/COMP_CML/adexl/results/data/MonteCarlo.0</psfdir>
+			<simdir>$AXL_PROJECT_DIR/Project1/COMP_CML/adexl/results/data/MonteCarlo.0</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/home/cadence/Desktop/PDK/Project1/COMP_CML/adexl/results/data/MonteCarlo.0.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/MonteCarlo.0.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+	</history>
+</setupdb>

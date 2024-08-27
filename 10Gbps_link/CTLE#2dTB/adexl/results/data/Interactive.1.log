@@ -1,0 +1,18 @@
+Starting Single Run, Sweeps and Corners...
+
+Current time: Thu Aug  1 09:48:42 2024 
+Best design point: 1
+Design specs: 
+	pro_2:CTLE-TB:1	corner	Nominal - 
+Design parameters: 
+	CONT_1		0
+	CONT_2		0
+	CONT_3		0
+	VCM		700m
+	VDD		1.2
+
+Interactive.1
+Number of points completed: 8
+Number of simulation errors: 0
+Interactive.1 completed. 
+Current time: Thu Aug  1 09:48:53 2024 

@@ -1,0 +1,41 @@
+Starting Single Run, Sweeps and Corners...
+
+Current time: Sun Jul 28 11:22:52 2024 
+Best design point: 1
+Design specs: 
+	Project_1_GP2025:DEMUX_TB:1	corner	Nominal - 
+	POWER		49.49m
+Design parameters: 
+	PER		100p
+	ISS		25u
+	M_2nd		16
+	M_CLK		65
+	M_IN		16
+	RD		1k
+	vh		1.2
+	vl		0
+	W_MN1		1.2u
+	W_MN2		1u
+	W_MN3		1.5u
+	W_MP1		3.6u
+	W_MP2		9u
+	W_MP3		3.6u
+	W_MP4		3u
+	INV_MN		25
+	INV_MP		25
+	L_INV_N		60n
+	L_INV_P		60n
+	N		1
+	TSPC_MN		20
+	TSPC_MP		40
+	L_2nd		60n
+	L_CLK		60n
+	L_IN		60n
+	vhigh		1.2
+	vlow		0
+
+Interactive.0
+Number of points completed: 1
+Number of simulation errors: 0
+Interactive.0 completed. 
+Current time: Sun Jul 28 11:32:05 2024 

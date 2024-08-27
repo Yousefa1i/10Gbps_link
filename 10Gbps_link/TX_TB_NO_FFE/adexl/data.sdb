@@ -1,0 +1,540 @@
+<?xml version="1.0"?>
+<setupdb version="5">data
+	<active>Active Setup
+		<corners>
+			<corner enabled="1">_default</corner>
+		</corners>
+		<extensions>
+			<extension>Parasitics
+				<callback>_parSetupDBExtensionCB</callback>
+				<iconvalue></iconvalue>
+				<icontype></icontype>
+			</extension>
+		</extensions>
+		<currentmode>Single Run, Sweeps and Corners</currentmode>
+		<overwritehistory>0</overwritehistory>
+		<tests>
+			<test>Proj_1:TX_TB_NO_FFE:1
+				<tool>ADE</tool>
+				<tooloptions>
+					<option>cell
+						<value>TX_TB_NO_FFE</value>
+					</option>
+					<option>lib
+						<value>Proj_1</value>
+					</option>
+					<option>sim
+						<value>spectre</value>
+					</option>
+					<option>view
+						<value>schematic</value>
+					</option>
+					<option>path
+						<value>$AXL_SETUPDB_DIR/test_states</value>
+					</option>
+					<option>state
+						<value>Proj_1:TX_TB_NO_FFE:1_active</value>
+					</option>
+				</tooloptions>
+				<origoptions>
+					<option>cell
+						<value>TX_TB_NO_FFE</value>
+					</option>
+					<option>lib
+						<value>Proj_1</value>
+					</option>
+					<option>sim
+						<value>spectre</value>
+					</option>
+					<option>view
+						<value>schematic</value>
+					</option>
+				</origoptions>
+				<outputs>
+					<output>TX_vodiff
+						<evalType>point</evalType>
+					</output>
+					<output>((VT("/TXP") + VT("/TXN")) / 2)
+						<evalType>point</evalType>
+					</output>
+					<output>RX_vodiff
+						<evalType>point</evalType>
+					</output>
+				</outputs>
+			</test>
+		</tests>
+		<vars>
+			<var>M
+				<value>8</value>
+				<dependentTests>
+					<dependentTest omitted="0">Proj_1:TX_TB_NO_FFE:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>M_3rd_Stage
+				<value>8</value>
+				<dependentTests>
+					<dependentTest omitted="0">Proj_1:TX_TB_NO_FFE:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>M_predriver
+				<value>30</value>
+				<dependentTests>
+					<dependentTest omitted="0">Proj_1:TX_TB_NO_FFE:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>Minverter
+				<value>18</value>
+				<dependentTests>
+					<dependentTest omitted="0">Proj_1:TX_TB_NO_FFE:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>VDD
+				<value>1.2</value>
+				<dependentTests>
+					<dependentTest omitted="0">Proj_1:TX_TB_NO_FFE:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>WN
+				<value>484n</value>
+				<dependentTests>
+					<dependentTest omitted="0">Proj_1:TX_TB_NO_FFE:1</dependentTest>
+				</dependentTests>
+			</var>
+			<var>WP
+				<value>1.3985u</value>
+				<dependentTests>
+					<dependentTest omitted="0">Proj_1:TX_TB_NO_FFE:1</dependentTest>
+				</dependentTests>
+			</var>
+		</vars>
+		<overwritehistoryname>Interactive.0</overwritehistoryname>
+		<plottingoptions>
+			<plottingoption>plottype
+				<value>None</value>
+			</plottingoption>
+			<plottingoption>usewaveformtemplate
+				<value>no</value>
+			</plottingoption>
+			<plottingoption>waveformtemplate
+				<value></value>
+			</plottingoption>
+		</plottingoptions>
+	</active>
+	<history>History
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.12
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>Proj_1:TX_TB_NO_FFE:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>TX_TB_NO_FFE</value>
+							</option>
+							<option>lib
+								<value>Proj_1</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>Proj_1:TX_TB_NO_FFE:1_none_Interactive.12</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>TX_TB_NO_FFE</value>
+							</option>
+							<option>lib
+								<value>Proj_1</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>(VT("/TXP") - VT("/TXN"))
+								<evalType>point</evalType>
+							</output>
+							<output>((VT("/TXP") + VT("/TXN")) / 2)
+								<evalType>point</evalType>
+							</output>
+							<output>(VT("/RX_P") - VT("/RX_N"))
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+				</tests>
+				<vars>
+					<var>M
+						<value>8</value>
+						<dependentTests>
+							<dependentTest omitted="0">Proj_1:TX_TB_NO_FFE:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>M_3rd_Stage
+						<value>8</value>
+						<dependentTests>
+							<dependentTest omitted="0">Proj_1:TX_TB_NO_FFE:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>M_predriver
+						<value>30</value>
+						<dependentTests>
+							<dependentTest omitted="0">Proj_1:TX_TB_NO_FFE:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Minverter
+						<value>18</value>
+						<dependentTests>
+							<dependentTest omitted="0">Proj_1:TX_TB_NO_FFE:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>VDD
+						<value>1.2</value>
+						<dependentTests>
+							<dependentTest omitted="0">Proj_1:TX_TB_NO_FFE:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>WN
+						<value>484n</value>
+						<dependentTests>
+							<dependentTest omitted="0">Proj_1:TX_TB_NO_FFE:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>WP
+						<value>1.3985u</value>
+						<dependentTests>
+							<dependentTest omitted="0">Proj_1:TX_TB_NO_FFE:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Sat Aug 17 01:34:19 2024
+</timestamp>
+			<resultsname>/home/cadence/Desktop/Seriallinks/Proj_1/TX_TB_NO_FFE/adexl/results/data/Interactive.12.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.12.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/berkeley_cadence_013419486</localpsfdir>
+			<psfdir>/home/cadence/simulation/Proj_1/TX_TB_NO_FFE/adexl/results/data/Interactive.12</psfdir>
+			<simdir>$AXL_PROJECT_DIR/Proj_1/TX_TB_NO_FFE/adexl/results/data/Interactive.12</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/home/cadence/Desktop/Seriallinks/Proj_1/TX_TB_NO_FFE/adexl/results/data/Interactive.12.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.12.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">Interactive.13
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>Proj_1:TX_TB_NO_FFE:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>TX_TB_NO_FFE</value>
+							</option>
+							<option>lib
+								<value>Proj_1</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>Proj_1:TX_TB_NO_FFE:1_none_Interactive.13</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>TX_TB_NO_FFE</value>
+							</option>
+							<option>lib
+								<value>Proj_1</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>TX_vodiff
+								<evalType>point</evalType>
+							</output>
+							<output>((VT("/TXP") + VT("/TXN")) / 2)
+								<evalType>point</evalType>
+							</output>
+							<output>RX_vodiff
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+				</tests>
+				<vars>
+					<var>M
+						<value>8</value>
+						<dependentTests>
+							<dependentTest omitted="0">Proj_1:TX_TB_NO_FFE:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>M_3rd_Stage
+						<value>8</value>
+						<dependentTests>
+							<dependentTest omitted="0">Proj_1:TX_TB_NO_FFE:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>M_predriver
+						<value>30</value>
+						<dependentTests>
+							<dependentTest omitted="0">Proj_1:TX_TB_NO_FFE:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Minverter
+						<value>18</value>
+						<dependentTests>
+							<dependentTest omitted="0">Proj_1:TX_TB_NO_FFE:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>VDD
+						<value>1.2</value>
+						<dependentTests>
+							<dependentTest omitted="0">Proj_1:TX_TB_NO_FFE:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>WN
+						<value>484n</value>
+						<dependentTests>
+							<dependentTest omitted="0">Proj_1:TX_TB_NO_FFE:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>WP
+						<value>1.3985u</value>
+						<dependentTests>
+							<dependentTest omitted="0">Proj_1:TX_TB_NO_FFE:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Sat Aug 17 01:43:25 2024
+</timestamp>
+			<resultsname>/home/cadence/Desktop/Seriallinks/Proj_1/TX_TB_NO_FFE/adexl/results/data/Interactive.13.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/Interactive.13.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/berkeley_cadence_014325384</localpsfdir>
+			<psfdir>/home/cadence/simulation/Proj_1/TX_TB_NO_FFE/adexl/results/data/Interactive.13</psfdir>
+			<simdir>$AXL_PROJECT_DIR/Proj_1/TX_TB_NO_FFE/adexl/results/data/Interactive.13</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/home/cadence/Desktop/Seriallinks/Proj_1/TX_TB_NO_FFE/adexl/results/data/Interactive.13.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/Interactive.13.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+		</historyentry>
+		<historyentry assemblerOrExplorer="adexl" roOrView="view">150n
+			<checkpoint>
+				<corners>
+					<corner enabled="1">_default</corner>
+				</corners>
+				<extensions>
+					<extension>Parasitics
+						<callback>_parSetupDBExtensionCB</callback>
+						<iconvalue></iconvalue>
+						<icontype></icontype>
+					</extension>
+				</extensions>
+				<currentmode>Single Run, Sweeps and Corners</currentmode>
+				<overwritehistory>0</overwritehistory>
+				<tests>
+					<test>Proj_1:TX_TB_NO_FFE:1
+						<tool>ADE</tool>
+						<tooloptions>
+							<option>cell
+								<value>TX_TB_NO_FFE</value>
+							</option>
+							<option>lib
+								<value>Proj_1</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+							<option>path
+								<value>$AXL_SETUPDB_DIR/test_states</value>
+							</option>
+							<option>state
+								<value>Proj_1:TX_TB_NO_FFE:1_none_150n</value>
+							</option>
+						</tooloptions>
+						<origoptions>
+							<option>cell
+								<value>TX_TB_NO_FFE</value>
+							</option>
+							<option>lib
+								<value>Proj_1</value>
+							</option>
+							<option>sim
+								<value>spectre</value>
+							</option>
+							<option>view
+								<value>schematic</value>
+							</option>
+						</origoptions>
+						<outputs>
+							<output>TX_vodiff
+								<evalType>point</evalType>
+							</output>
+							<output>((VT("/TXP") + VT("/TXN")) / 2)
+								<evalType>point</evalType>
+							</output>
+							<output>RX_vodiff
+								<evalType>point</evalType>
+							</output>
+						</outputs>
+					</test>
+				</tests>
+				<vars>
+					<var>M
+						<value>8</value>
+						<dependentTests>
+							<dependentTest omitted="0">Proj_1:TX_TB_NO_FFE:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>M_3rd_Stage
+						<value>8</value>
+						<dependentTests>
+							<dependentTest omitted="0">Proj_1:TX_TB_NO_FFE:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>M_predriver
+						<value>30</value>
+						<dependentTests>
+							<dependentTest omitted="0">Proj_1:TX_TB_NO_FFE:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>Minverter
+						<value>18</value>
+						<dependentTests>
+							<dependentTest omitted="0">Proj_1:TX_TB_NO_FFE:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>VDD
+						<value>1.2</value>
+						<dependentTests>
+							<dependentTest omitted="0">Proj_1:TX_TB_NO_FFE:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>WN
+						<value>484n</value>
+						<dependentTests>
+							<dependentTest omitted="0">Proj_1:TX_TB_NO_FFE:1</dependentTest>
+						</dependentTests>
+					</var>
+					<var>WP
+						<value>1.3985u</value>
+						<dependentTests>
+							<dependentTest omitted="0">Proj_1:TX_TB_NO_FFE:1</dependentTest>
+						</dependentTests>
+					</var>
+				</vars>
+				<overwritehistoryname>Interactive.0</overwritehistoryname>
+				<plottingoptions>
+					<plottingoption>plottype
+						<value>None</value>
+					</plottingoption>
+					<plottingoption>usewaveformtemplate
+						<value>no</value>
+					</plottingoption>
+					<plottingoption>waveformtemplate
+						<value></value>
+					</plottingoption>
+				</plottingoptions>
+				<sortVariableValues>0</sortVariableValues>
+			</checkpoint>
+			<timestamp>Sat Aug 17 02:28:54 2024
+</timestamp>
+			<resultsname>/home/cadence/Desktop/Seriallinks/Proj_1/TX_TB_NO_FFE/adexl/results/data/150n.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/data/150n.rdb</simresults>
+			<rawdatadelstrategy>SaveAll</rawdatadelstrategy>
+			<netlistdelstrategy>SaveAll</netlistdelstrategy>
+			<uselocalpsfdir>false</uselocalpsfdir>
+			<localpsfdir>/tmp/berkeley_cadence_022855211</localpsfdir>
+			<psfdir>/home/cadence/simulation/Proj_1/TX_TB_NO_FFE/adexl/results/data/150n</psfdir>
+			<simdir>$AXL_PROJECT_DIR/Proj_1/TX_TB_NO_FFE/adexl/results/data/150n</simdir>
+			<gendatasheetplotsonsimulation>1</gendatasheetplotsonsimulation>
+			<runlog>/home/cadence/Desktop/Seriallinks/Proj_1/TX_TB_NO_FFE/adexl/results/data/150n.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/data/150n.log</runlogfile>
+			<schematicpoint></schematicpoint>
+			<test>all</test>
+			<locked>1</locked>
+		</historyentry>
+	</history>
+</setupdb>

@@ -1,0 +1,23 @@
+Starting Single Run, Sweeps and Corners...
+
+Current time: Tue Aug 20 23:21:03 2024 
+Best design point: 1
+Design specs: 
+	new_tx:TX_TB:1	corner	Nominal - 
+Design parameters: 
+	Mlvt		30
+	M		8
+	Minverter		18
+	M_3rd_Stage		8
+	M_MUX		1
+	M_predriver		25
+	M_TG		1
+	VDD		1.2
+	WN		252n
+	WP		652n
+
+Interactive.3
+Number of points completed: 1
+Number of simulation errors: 0
+Interactive.3 completed. 
+Current time: Wed Aug 21 00:46:12 2024 

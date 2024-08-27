@@ -1,0 +1,16 @@
+Starting Single Run, Sweeps and Corners...
+
+Current time: Thu Aug 15 19:51:00 2024 
+Best design point: 1
+Design specs: 
+	Proj_1:TEST_2:1	corner	Nominal - 
+Design parameters: 
+	M		1
+	VDD		1.2
+	L		82u
+
+Interactive.59
+Number of points completed: 1
+Number of simulation errors: 0
+Interactive.59 completed. 
+Current time: Thu Aug 15 19:51:11 2024 

@@ -1,0 +1,8 @@
+TDMCHECKPOINT="1.0"
+Project1/1st_Tap_Controller type="cell"
+Project1/DFE type="cell"
+Project1/DFE_TB type="cell"
+Project1/D_Flip_Flop_CML type="cell"
+Project1/Latch type="cell"
+Project1/Main_Tap_Controller type="cell"
+keepEmptyCategory type="unknown"

@@ -1,0 +1,22 @@
+Starting Single Run, Sweeps and Corners...
+
+Current time: Wed Aug  7 14:22:19 2024 
+Best design point: 1
+Design specs: 
+	pro_2:VGA_TB:1	corner	Nominal - 
+Design parameters: 
+	CONT_1		0
+	CONT_2		0
+	CONT_3		0
+	VCM		600m
+	VDD		1.2
+	W		33u
+	w1		4.8u
+	WM		2.6u
+	L		60n
+
+Interactive.37
+Number of points completed: 8
+Number of simulation errors: 0
+Interactive.37 completed. 
+Current time: Wed Aug  7 14:22:51 2024 

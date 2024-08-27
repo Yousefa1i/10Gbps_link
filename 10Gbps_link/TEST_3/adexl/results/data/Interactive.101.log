@@ -1,0 +1,19 @@
+Starting Single Run, Sweeps and Corners...
+
+Current time: Thu Aug 15 20:30:32 2024 
+Best design point: 1
+Design specs: 
+	Proj_1:TEST_3:1	corner	Nominal - 
+	ronp		81.02M
+	ronN		603.2
+Design parameters: 
+	WN		480n
+	WP		1.399u
+	VDD		1.2
+	M		1
+
+Interactive.101
+Number of points completed: 1
+Number of simulation errors: 0
+Interactive.101 completed. 
+Current time: Thu Aug 15 20:30:39 2024 

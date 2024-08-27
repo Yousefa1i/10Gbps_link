@@ -1,0 +1,17 @@
+Starting Single Run, Sweeps and Corners...
+
+Current time: Sun Jul 28 03:40:00 2024 
+Best design point: 1
+Design specs: 
+	Project1:VGA_gmid:1	corner	Nominal - 
+Design parameters: 
+	VGS		600m
+	L		100n
+	W		1u
+	VDS		250m
+
+Interactive.4
+Number of points completed: 9
+Number of simulation errors: 0
+Interactive.4 completed. 
+Current time: Sun Jul 28 03:40:50 2024 

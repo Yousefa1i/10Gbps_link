@@ -1,0 +1,15 @@
+Starting Single Run, Sweeps and Corners...
+
+Current time: Wed Jul 31 07:03:38 2024 
+Best design point: 1
+Design specs: 
+	Proj_1:test_ser:1	corner	Nominal - 
+Design parameters: 
+	M		10
+	Minverter		20
+
+Interactive.12
+Number of points completed: 1
+Number of simulation errors: 0
+Interactive.12 completed. 
+Current time: Wed Jul 31 07:04:45 2024 

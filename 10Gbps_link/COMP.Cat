@@ -1,0 +1,6 @@
+TDMCHECKPOINT="1.0"
+Project1/CML_Latch type="cell"
+Project1/COMP_CML type="cell"
+Project1/Modified_SR_Latch type="cell"
+Project1/SRSAR_10GHz type="cell"
+keepEmptyCategory type="unknown"

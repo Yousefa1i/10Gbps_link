@@ -1,0 +1,14 @@
+Starting Single Run, Sweeps and Corners...
+
+Current time: Fri Jul 26 23:40:21 2024 
+Best design point: 1
+Design specs: 
+	Proj_1:TSPC_flip_flop_TB:1	corner	Nominal - 
+Design parameters: 
+	M		20
+
+Interactive.3
+Number of points completed: 13
+Number of simulation errors: 0
+Interactive.3 completed. 
+Current time: Fri Jul 26 23:42:02 2024 

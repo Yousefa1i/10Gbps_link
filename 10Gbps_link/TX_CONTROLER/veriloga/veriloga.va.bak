@@ -1,0 +1,258 @@
+// VerilogA for TX_Controller, veriloga
+
+`include "constants.vams"
+`include "disciplines.vams"
+
+module TX_Controller ( Vexct , Vact , CLK, TXN, TXP, DLEV, SC , EQC_Main , EQC_Pre ) ;
+
+input Vexct , Vact , CLK , TXN , TXP ;
+
+output DLEV ;
+
+output [2:0] SC ;
+
+output [4:0] EQC_Main , EQC_Pre ;
+
+electrical Vexct , Vact , CLK, TXN, TXP, DLEV ;
+
+electrical [2:0] SC ;
+
+electrical [4:0] EQC_Main , EQC_Pre ;
+
+
+parameter real Mue = 1e-5  ; // Adaptation Loop Gain " Learning Rate/Step "
+
+parameter real VDD = 1.2 ;  // Supply Voltage
+
+parameter real TCLK = 0.1n from (0:1] ;  // Clock Period
+
+parameter real TR = TCLK/100 from [0:TCLK/2) ;   // Rise time
+
+parameter real TF = TCLK/100 from [0:TCLK/2) ;   // Fall time
+
+parameter real TD = TCLK/1000 from [0:TCLK/2) ;  // Delay time
+
+parameter real EQ = 0.18 ;  
+
+real TW = 0 ; // First Tap Weight For FFE
+
+real TX = 0 ; // TX diff output
+
+integer N_count = 0 ; // Clock Cycle Counter
+
+integer pull_down_count = 2 ; 
+
+integer pull_up_count = 1 ; 
+
+integer UI_count = 20 ; // Unit_Inverter Count
+
+integer Main_count = 17 ; // Main Tap Count
+
+integer Pre_count = 3 ; // Pre Tap Count
+
+real Error = 0 ;  //  Error of the received signal with respect to the desired data level dlev " Error = TX - dlev  "
+
+real EQ_Error = 10 ; 
+
+real VP = 0 ; 
+
+real dlev = 0.2 ;  // Desired Data Level " dlev = dlev +/- Mue * 2000 "
+
+integer dlev_Cycles = 50 ; // Number of Cycles that let to dlev for settling
+
+integer SWING_Control [2:0] = {1,0,0};
+
+//integer [4:0] TERM_Control = {1,0,0,1,0};
+
+integer EQ_Main_Control [4:0] = {1,0,0,0,1};
+
+integer EQ_Pre_Control [4:0] = {1,1,0,0,0};
+
+integer dummy = 0 ; // dummy variable for Swing
+
+integer dummy_TERM = 0 ; // dummy variable for Term
+
+integer dummy_EQ_Main = 0 ; // dummy variable for Eq_Main
+
+integer dummy_EQ_Pre = 0 ; // dummy variable for Eq_Pre
+
+
+integer i = 0 ; // For Loop Counter
+
+real VTH = 0.6 ;
+
+//integer TERM = 10 ;
+
+	analog begin
+
+		@(initial_step) begin
+
+			N_count = 1 ;
+	
+		end
+
+
+		@(cross( V(CLK) - VTH, 1 )) begin // Rising Edge
+
+			N_count = N_count + 1 ;
+			
+			TX = V(TXP,TXN) ;
+		
+		if ( N_count % 10 == 0 ) begin
+
+			/*Error = TX - dlev ;
+			if(Error >= 0) begin
+				dlev = dlev + Mue * 2000 ;
+			end
+
+			else begin
+				dlev = dlev - Mue * 2000 ;
+			end*/
+
+		
+
+
+			if( TX > 0.5 ) begin
+				
+				pull_up_count = pull_up_count - 1 ; 
+
+				pull_down_count = pull_down_count + 1 ; 
+
+			end
+
+			if ( TX < 0.3 ) begin
+
+				pull_up_count = pull_up_count + 1 ; 
+
+				pull_down_count = pull_down_count - 1 ;
+
+
+			end
+
+			dummy = pull_up_count ;
+
+
+			for( i = 0 ; i < 3 ; i = i + 1 ) begin
+
+				if( dummy > 0) begin
+					
+					SWING_Control[i] = VDD ;
+				end
+
+				else begin
+
+					SWING_Control[i] = 0 ;
+
+				end
+
+				dummy = dummy - 1 ;
+
+			end
+
+		end
+
+
+		if( V(Vexct) > V(Vact) ) begin
+
+			VP = VDD ;
+
+		end
+
+		else begin
+
+			VP = -1 * VDD ;
+
+		end
+
+		
+		if( (VP > 0)&(UI_count > 0) ) begin
+
+			UI_count = UI_count - 1 ;
+
+		end
+
+		else if ( UI_count < 31 ) begin
+
+			UI_count = UI_count + 1 ;
+
+		end
+
+		/*dummy_TERM = UI_count ;
+		for( i = 0 ; i < 5 ; i = i + 1 ) begin
+
+			if ( dummy_TERM % 2 == 0 ) 
+				TERM_Control[i] = 0 ;
+				
+			else 
+				TERM_Control[i] = VDD ;
+
+			dummy_TERM = dummy_TERM / 2 ;	
+		end*/
+		
+
+
+		EQ_Error = 20 ;
+
+		for( i = UI_count/2 ; i < UI_count ; i = i + 1 ) begin
+
+		Pre_count = i * EQ   ;
+
+		dummy_EQ_Pre = (Pre_count*100)%100 ;
+
+		if ( ( dummy_EQ_Pre < EQ_Error ) & ( dummy_EQ_Pre + i == UI_count ) ) begin
+		EQ_Error = dummy_EQ_Pre ;
+		Main_count = UI_count - Pre_count ;
+		end
+			
+		end
+
+
+
+
+		Pre_count = UI_count - Main_count ;
+
+		dummy_EQ_Main = Main_count ;
+		dummy_EQ_Pre = Pre_count ;
+
+		for( i = 0 ; i < 5 ; i = i + 1 ) begin
+
+			if ( dummy_EQ_Main % 2 == 0 ) 
+				EQ_Main_Control[i] = 0 ;
+				
+			else 
+				EQ_Main_Control[i] = VDD ;
+
+			dummy_EQ_Main = dummy_EQ_Main / 2 ;	
+		end
+
+		for( i = 0 ; i < 5 ; i = i + 1 ) begin
+
+			if ( dummy_EQ_Pre % 2 == 0 ) 
+				EQ_Pre_Control[i] = 0 ;
+				
+			else 
+				EQ_Pre_Control[i] = VDD ;
+
+			dummy_EQ_Pre = dummy_EQ_Pre / 2 ;	
+		end
+
+
+		end
+		
+
+
+		V(DLEV) <+ transition (dlev, TD, TR, TF);
+
+	generate i (2,0)	V(SC[i]) <+ transition (SWING_Control[i], TD, TR, TF);
+
+
+	generate i (4,0)	V(EQC_Main[i]) <+ transition (EQ_Main_Control[i], TD, TR, TF);
+
+
+	generate i (4,0)	V(EQC_Pre[i]) <+ transition (EQ_Pre_Control[i], TD, TR, TF);
+
+
+		
+	end
+
+endmodule

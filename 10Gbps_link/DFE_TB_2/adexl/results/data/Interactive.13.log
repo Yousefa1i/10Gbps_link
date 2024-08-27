@@ -1,0 +1,24 @@
+Starting Single Run, Sweeps and Corners...
+
+Current time: Tue Jul 30 06:21:15 2024 
+Best design point: 1
+Design specs: 
+	Project1:DFE_TB:1	corner	Nominal - 
+Design parameters: 
+	CTRL0		1.2
+	CTRL1		1.2
+	CTRL2		1.2
+	CTRL3		0
+	CTRL_M0		1.2
+	CTRL_M1		1.2
+	CTRL_M2		1.2
+	CTRL_M3		0
+	PER		100p
+	SgnP		1
+	RL		100
+
+Interactive.13
+Number of points completed: 64
+Number of simulation errors: 0
+Interactive.13 completed. 
+Current time: Tue Jul 30 06:24:06 2024 

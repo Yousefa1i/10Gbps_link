@@ -1,0 +1,16 @@
+Starting Single Run, Sweeps and Corners...
+
+Current time: Thu Aug  1 05:26:00 2024 
+Best design point: 1
+Design specs: 
+	Project1:D_Flip_Flop_CML_TB:1	corner	Nominal - 
+Design parameters: 
+	PER		100p
+	M		1
+	MFF		1
+
+Interactive.14
+Number of points completed: 1
+Number of simulation errors: 0
+Interactive.14 completed. 
+Current time: Thu Aug  1 05:26:05 2024 
